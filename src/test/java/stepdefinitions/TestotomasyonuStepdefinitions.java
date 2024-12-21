@@ -22,11 +22,13 @@ public class TestotomasyonuStepdefinitions {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("toUrl"));
     }
+
     @Then("arama kutusuna phone yazip aratir")
     public void arama_kutusuna_phone_yazip_aratir() {
 
         testotomasyonuPage.searchBox.sendKeys("phone" + Keys.ENTER);
     }
+
     @Then("arama sonucunda urun bulunabildigini test eder")
     public void arama_sonucunda_urun_bulunabildigini_test_eder() {
 
@@ -35,6 +37,7 @@ public class TestotomasyonuStepdefinitions {
 
         Assertions.assertNotEquals(unExceptedResult, actualResult);
     }
+
     @Then("sayfayi kapatir")
     public void sayfayi_kapatir() {
 
@@ -70,26 +73,31 @@ public class TestotomasyonuStepdefinitions {
 
         testotomasyonuPage.accountLink.click();
     }
+
     @When("email olarak {string} girer")
     public void email_olarak_girer(String configurationEmailType) {
 
         testotomasyonuPage.emailBox.sendKeys(ConfigurationReader.getProperty(configurationEmailType));
     }
+
     @When("password olarak {string} girer")
     public void password_olarak_girer(String configurationPasswordType) {
 
         testotomasyonuPage.passwordBox.sendKeys(ConfigurationReader.getProperty(configurationPasswordType));
     }
+
     @When("login butonuna basar")
     public void login_butonuna_basar() {
 
         testotomasyonuPage.signInButton.click();
     }
+
     @Then("basarili olarak giris yapilabildigini test eder")
     public void basarili_olarak_giris_yapilabildigini_test_eder() {
 
         Assertions.assertTrue(testotomasyonuPage.logoutButton.isDisplayed());
     }
+
     @Then("logout butonuna basar")
     public void logout_butonuna_basar() {
 
@@ -106,5 +114,17 @@ public class TestotomasyonuStepdefinitions {
     public void kullanici_sayfasina_gider(String configurationUrl) {
 
         Driver.getDriver().get(ConfigurationReader.getProperty(configurationUrl));
+    }
+
+    @When("email olarak direkt kullanilacak {string} girer")
+    public void emailOlarakDirektKullanilacakGirer(String direktKullanilacakEmail) {
+
+        testotomasyonuPage.emailBox.sendKeys(direktKullanilacakEmail);
+    }
+
+    @And("password olarak direkt kullanilacak {string} girer")
+    public void passwordOlarakDirektKullanilacakGirer(String direktKullanilacakPassword) {
+
+        testotomasyonuPage.passwordBox.sendKeys(direktKullanilacakPassword);
     }
 }

@@ -19,6 +19,7 @@ public class TestotomasyonuFormPageStepdefinitions {
 
         select.selectByVisibleText(ay);
     }
+
     @Then("secilen ayin {string} oldugunu test eder")
     public void secilen_ayin_oldugunu_test_eder(String ay) {
 
@@ -26,6 +27,7 @@ public class TestotomasyonuFormPageStepdefinitions {
 
         Assertions.assertEquals(ay, actualText);
     }
+
     @When("acilir menude toplam {int} option oldugunu test eder")
     public void acilir_menude_toplam_option_oldugunu_test_eder(Integer numberOfOption) {
 

@@ -1,6 +1,6 @@
 Feature: US1006 Dinamik URL Kullanimi
 
-  @wip
+
   Scenario: TC01 kullanici url'i dinamik olarak girebilmeli
     Given kullanici "toFormUrl" sayfasina gider
     Then dogum tarihi ay acilir menuden "Haziran" secer
