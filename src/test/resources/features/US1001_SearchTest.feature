@@ -1,3 +1,5 @@
+
+@firstTry
 Feature: US1001 Arama Testi
 
   Scenario: TC01 kullanıcı phone arattığında ürün bulabilmeli

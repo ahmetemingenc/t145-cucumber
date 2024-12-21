@@ -107,29 +107,4 @@ public class TestotomasyonuStepdefinitions {
 
         Driver.getDriver().get(ConfigurationReader.getProperty(configurationUrl));
     }
-    @Then("dogum tarihi ay acilir menuden {string} secer")
-    public void dogum_tarihi_ay_acilir_menuden_secer(String ay) {
-
-        Select select = new Select(testotomasyonuFormPage.ayDropdown);
-        select.selectByVisibleText(ay);
-    }
-    @Then("secilen ayin {string} oldugunu test eder")
-    public void secilen_ayin_oldugunu_test_eder(String ay) {
-
-        String exceptedText = ay;
-        String actualText = testotomasyonuFormPage.ayDropdown.getText();
-
-        Assertions.assertEquals(exceptedText, actualText);
-    }
-    @When("acilir menude toplam {int} option oldugunu test eder")
-    public void acilir_menude_toplam_option_oldugunu_test_eder(Integer numberOfOption) {
-
-        Select select = new Select(testotomasyonuFormPage.ayDropdown);
-        List<String> ayDropDownOptionsList = ReusableMethods.convertStringList(select.getOptions());
-
-        int exceptedNumberOfOption = numberOfOption;
-        int actualNumberOfOption = ayDropDownOptionsList.size();
-
-        Assertions.assertEquals(exceptedNumberOfOption, actualNumberOfOption);
-    }
 }

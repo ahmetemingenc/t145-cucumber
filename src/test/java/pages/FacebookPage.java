@@ -19,4 +19,14 @@ public class FacebookPage {
 
     @FindBy(name = "login")
     public WebElement loginButton;
+
+    @FindBy(xpath = "//*[@class='_42ft _4jy0 _6lti _4jy6 _4jy2 selected _51sy']")
+    public WebElement createAcoountButton;
+
+    @FindBy(xpath = "(//*[@class='inputtext _58mg _5dba _2ph-'])[1]")
+    public WebElement registerFirstNameButton;
+
+    @FindBy(xpath = "//*[@class='_6j mvm _6wk _6wl _58mi _6o _6v']")
+    public WebElement singupBotton;
+
 }

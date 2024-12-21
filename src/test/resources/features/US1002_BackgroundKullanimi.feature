@@ -8,7 +8,7 @@ Feature: US1002 Bastaki Tekrarlari Background ile Yapma
     And arama sonucunda urun bulunabildigini test eder
     And sayfayi kapatir
 
-
+  @firstTry
   Scenario: TC05 kullanici dress arattiginda urun bulabilmeli
     Then arama kutusuna dress yazip aratir
     When arama sonucunda urun bulunabildigini test eder
