@@ -7,4 +7,3 @@ Feature: US1006 Dinamik URL Kullanimi
     And secilen ayin "Haziran" oldugunu test eder
     When acilir menude toplam 13 option oldugunu test eder
     And 2 saniye bekler
-    And sayfayi kapatir

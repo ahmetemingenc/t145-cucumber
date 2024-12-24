@@ -8,4 +8,3 @@ Feature: US1004 Kullanici gecerli bilgilerle giris yapar
     And login butonuna basar
     Then basarili olarak giris yapilabildigini test eder
     And logout butonuna basar
-    And sayfayi kapatir

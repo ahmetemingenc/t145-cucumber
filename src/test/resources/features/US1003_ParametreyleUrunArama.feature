@@ -5,4 +5,3 @@ Feature: US1003 Kullanici parametre olarak yazdigi kelimeyi aratir
     When arama kutusuna "samsung" yazip aratir
     Then arama sonucunda urun bulunabildigini test eder
     And 2 saniye bekler
-    And sayfayi kapatir

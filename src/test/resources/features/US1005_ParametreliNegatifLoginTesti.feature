@@ -8,4 +8,3 @@ Feature: US1005 Gecersiz bilgilerle giris yapilamaz
     Then login butonuna basar
     And giris yapilamadigini test eder
     And 2 saniye bekler
-    And sayfayi kapatir

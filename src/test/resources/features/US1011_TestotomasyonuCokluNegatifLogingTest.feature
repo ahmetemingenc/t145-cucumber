@@ -10,7 +10,6 @@ Feature: US1011 Kullanici yanlis bilgiler kullandiginda giris yapamaz
     Then login butonuna basar
     And giris yapilamadigini test eder
     And 1 saniye bekler
-    Then sayfayi kapatir
 
 
     Examples:
