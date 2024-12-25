@@ -1,0 +1,52 @@
+
+    herhangi bir Feature veya Scenario 3 farkli sekilde calistirilabilir
+
+    1- Direkt Scenario veya Feature'in kendisinden calistirilabilir
+       Bu durumda HICBIR RAPOR olusmaz
+       sadece calisir ve siz calisip passed/failed oldugunu gozlemlersiniz
+
+
+    2- Runner class'indan calistirmak istedigimiz Feature/Scenario'lari secip calistirabiliriz
+        - Ya features klasoru altinda sectigimiz @tag ile Feature/Scenario'lari secersiniz
+        - Ya da calisacak tum Feature/Scenario'lari features klasoru altinda olusturacaginiz
+          ozel bir klasore koyar FEATURES_PROPERTY_NAME olarak o klasorun yolunu gosterir
+          @tag secimini yoruma alabilirsiniz
+
+        Runner'dan bu iki secim yonteminden birini kullanarak
+        calisacak Feature/Scenario'lari run ederseniz
+        html/json/xml dosyalarindan herhangi birini elde edebilirsiniz
+        hangisini istiyorsak onu aktif edip, digerlerini yoruma almalisiniz
+
+        Gorsel acidan bize hitap eden html rapor olur,
+        ama test datalarini developer'lara veya baskalarina vermemiz gerekirse
+        onlarin isteyecegi json veya xml formatinda rapor alinabilir
+
+    3- Terminal'den calisacak Runner(lar) secilerek
+       istenen Feature/Scenario'lari calistirabiliriz
+
+       Bunun icin
+       - pom.xml'e 3 adet pluggin ekleriz
+       - 1.plugin : cucumber-reporting pluggin
+                    bu pluggin gelismis raporlar olusturur
+                    ancak test sonuclarini almak icin json rapora ihtiyaci vardir
+                    pluggin icinde json raporlarin oldugu yer gosterilmelidir
+                    <param>**/json-reports/*.json</param>
+
+       - 2.pluggin : failsafe pluggin
+                     calismasini istedigimiz Runner'lardan failed olan olursa
+                     yeniden calistirilmasini sagliyor
+                     bu pluggin icinde calismasini istedigimiz
+                     Runner(lar)'in isimlerindeki ortak bolum belirtilmelidir
+                     <include>**/runners/*Runner*.java</include>
+
+       - 3.pluggin : surefire
+                     ayni anda calisacak thread sayisini belirler
+                     <threadCount>1</threadCount>
+                     burada kac Runner class'inin calisacagini yazmaliyiz
+
+                     Ayrica calisacak Runner(lar)'in isimlerindeki ortak bolum belirtilmelidir
+                     <include>**/runners/*Runner*.java</include>
+
+       Bu ayarlari yapar ve
+       terminal'den mvn clean verify yazarsak
+       Gelismis HTML raporlari elde edebiliriz.

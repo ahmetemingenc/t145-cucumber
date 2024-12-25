@@ -1,7 +1,7 @@
 
 Feature: US1009 Kullanici elementleri kullanabilmek icin bekler
 
-
+  @parallel2
   Scenario: TC01 kullanici elementlerin goruntulenmesini bekleyebilmeli
     Given kullanici "heroUrl" sayfasina gider
     When kullanici Add Element butonuna basar

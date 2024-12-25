@@ -1,5 +1,6 @@
 Feature: US1004 Kullanici gecerli bilgilerle giris yapar
 
+  @parallel1
   Scenario: TC01 kullanici gecerli bilgilerle giris yapabilmeli
     Given kullanici testotomasyonu ana sayfaya gider
     Then account linkine tiklar

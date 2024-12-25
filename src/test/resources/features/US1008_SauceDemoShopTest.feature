@@ -1,6 +1,6 @@
 Feature:
 
-
+  @parallel1
   Scenario:
     Given kullanici "sauceUrl" sayfasina gider
     And 2 saniye bekler

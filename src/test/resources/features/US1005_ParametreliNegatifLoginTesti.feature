@@ -1,5 +1,6 @@
 Feature: US1005 Gecersiz bilgilerle giris yapilamaz
 
+  @parallel2
   Scenario: TC01 gecersiz email ile giris yapilamamali
     Given kullanici testotomasyonu ana sayfaya gider
     Then account linkine tiklar
